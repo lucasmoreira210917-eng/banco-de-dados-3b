@@ -24,20 +24,13 @@
         <input type="text" name="nome" id="nome" class="form-control">
       </div>
       <div class="mt-3">
-        <a href="gmuscular.php" class="btn btn-secondary">Cancelar</a>
+        <a href="exercicios.php" class="btn btn-secondary">Cancelar</a>
         <button type="submit" class="btn btn-success">Salvar</button>
       </div>
     </form>
   </div>
   
 </main>
-    
-    
-
-
-
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
 </body>
 </html>
