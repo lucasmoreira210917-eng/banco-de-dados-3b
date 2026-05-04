@@ -1,6 +1,7 @@
 <?php
 
 class Exercicio extends CRUD {
+    protected $table = 'exercicio';
     private $id;
     private $nome;  
     private $descricao;  
@@ -28,14 +29,20 @@ class Exercicio extends CRUD {
     public function setNome($nome) {
         $this->nome = $nome;
     }
+    public function getDescricao() {
+        return $this->descricao;
+    }
 
-    public function setNomeDescricao($descricao) {
-        $this->descricao = $descricao;6
+    public function setDescricao($descricao) {
+        $this->descricao = $descricao;
     }
 
     public function getGrupoMuscular() {
         return $this->grupoMuscular;
     
 }
+public function setGrupoMuscular($grupoMuscular) {
+    $this->grupoMuscular = $grupoMuscular;
 
+}
 }

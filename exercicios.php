@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,9 +17,8 @@
 
   });
   $exercicio = new Exercicio();
-  $exercicio->$exercicios -> all();
+  $exercicios = $exercicio-> all();
 
-  
   ?>
  
 <div class="mt-5 d-flex justify-content-between p-5">
@@ -36,7 +35,7 @@
     </tr>
   </thead>
   <tbody>
-    <?php foreach ($exercicio as $exec): ?>
+    <?php foreach ($exercicios as $exec): ?>
     <tr>
       <td><?php echo $exec->idexercicio; ?></td>
       <td><?php echo $exec->nome; ?></td>
