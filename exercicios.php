@@ -18,12 +18,18 @@
   });
   $exercicio = new Exercicio();
   $exercicios = $exercicio-> all();
-
   ?>
  
 <div class="mt-5 d-flex justify-content-between p-5">
     <h3>Exercícios</h3>
     <a href="ger-exercicio.php" class="btn btn-success">Novo exercicio</a>
+</div>
+<div> class="mb-3 d-flex gap-2 justify-content-center">
+<div class="mb-6">
+    <input type="text" name="campo-filtro " id="campo-filtro" >
+     id="campo-filtroclass="form-control" placeholder="Digite para pesquisar "
+  >
+</div>
 </div>
 
 <table class="table p-3">
@@ -54,5 +60,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+<script src="js/tb-interativa.js"></script>
+<script src="js/exercicios.js"></script>
 </body>
 </html>
