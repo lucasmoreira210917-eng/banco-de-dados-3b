@@ -10,7 +10,7 @@
 </head>
 <body>
   <?php require_once '_parts/_menu.php';
-  require_once "_parts/_menu.php";
+
 
   spl_autoload_register(function ($class) {
     require_once "class/{$class}.class.php";
@@ -19,20 +19,21 @@
   $exercicio = new Exercicio();
   $exercicios = $exercicio-> all();
   ?>
+  <main class="container">
+  <div class="mt-5 d-flex justify-content-between p-5">
+    <h3>
+      Exercícios
+    </h3>
+   <a href="ger-exercicio.php" class="btn btn-success">Novo Exercício</a>
+  </div>
  
-<div class="mt-5 d-flex justify-content-between p-5">
-    <h3>Exercícios</h3>
-    <a href="ger-exercicio.php" class="btn btn-success">Novo exercicio</a>
-</div>
-<div> class="mb-3 d-flex gap-2 justify-content-center">
-<div class="mb-6">
-    <input type="text" name="campo-filtro " id="campo-filtro" >
-     id="campo-filtroclass="form-control" placeholder="Digite para pesquisar "
-  >
-</div>
-</div>
+<div class="mb-3 d-flex gap-2 justify-content-center">
+    <div class="col-md-6">
+      <input type="text" name="campo-filtro" id="campo-filtro" class="form-control" placeholder="🔍 Digite para pesquisar" title="Pesquise pelo nome do exercício">
+    </div>
+  </div>
 
-<table class="table p-3">
+  <table class="table p-3" id="tabela-exercicios">
   <thead>
     <tr>
       <th class="text-center">#</th>

@@ -24,7 +24,12 @@ class tabellainterativa {
         const linhas= this.#corpoTabela.querySelectorAll('tr');
 
         linhas.forEach((linha) => {
-            let texto;
+            let texto = linha.text.toLowerCase();
+            if (texto.includes(termo)) {
+                linha.classlist.remove('d-none');
+            } else {
+                linha.classlist.add('d-none');
+            }
 
         })
     }
