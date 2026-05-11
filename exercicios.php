@@ -55,6 +55,9 @@
     <?php endforeach; ?>
   </tbody>
 </table>
+<div class="alert alert-info d-flex justify-content-center d-none" id="msg-vazio">
+  <i class="bi bi-info-lg mx-2"></i> Nenhum exercicio encontrado para o filtro digitado.
+</div>
 </main>
 
 
