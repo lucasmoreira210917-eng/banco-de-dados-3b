@@ -47,9 +47,9 @@
       <td><?php echo $exec->idexercicio; ?></td>
       <td><?php echo $exec->nome; ?></td>
       <td>
-        <a href="#" class="btn btn-outline-success"><i class="bi bi-eye"></i></a>
-        <a href="#" class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i></a>
-        <a href="#" class="btn btn-outline-danger"><i class="bi bi-trash"></i></a>
+        <a href="ver-exercicio.php?id=<?php echo $exec->idexercicio; ?>" class="btn btn-outline-success"><i class="bi bi-eye"></i></a>
+        <a href="ger-exercicio.php?id=<?php echo $exec->idexercicio; ?>" class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i></a>
+        <a href="excluir-exercicio.php?id=<?php echo $exec->idexercicio; ?>t" class="btn btn-outline-danger"><i class="bi bi-trash"></i></a>
         </td>
     </tr>
     <?php endforeach; ?>
