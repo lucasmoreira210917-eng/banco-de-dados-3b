@@ -2,30 +2,35 @@
 
 class Exercicio extends CRUD {
     protected $table = 'exercicio';
-    private $id;
+    private  int $id;
     private $nome;  
     private $descricao;  
-    private $grupoMuscular;
+    private $grupo_muscular;
 
     public function add() {
-        $sql = "INSERT INTO {$this->table} (nome, descricao, grupoMuscular) VALUES (:nome, :descricao, :grupoMuscular)";
-        $stmt = $this->DB->prepare($sql);
+        $sql = "INSERT INTO $this->table (nome, descricao, grupo_muscular) VALUES (:nome, :descricao, :grupo_muscular)";
+        $stmt = $this->db->prepare($sql);
         $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
         $stmt->bindParam(":descricao", $this->descricao, PDO::PARAM_STR);
-        $stmt->bindParam(":grupoMuscular", $this->grupoMuscular, PDO::PARAM_STR);
-
+        $stmt->bindParam(":grupo_muscular", $this->grupo_muscular, PDO::PARAM_STR);
         return $stmt->execute();
     }
 
     public function update() {
-
+        $sql = "update $this->table SET nome = :nome, descricao = :descricao, grupo_muscular = :grupo_muscular WHERE idexercicio = :id;";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(":id", $this->id, PDO::PARAM_INT);
+        $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
+        $stmt->bindParam(":descricao", $this->descricao, PDO::PARAM_STR);
+        $stmt->bindParam(":grupo_muscular", $this->grupo_muscular, PDO::PARAM_STR);
+        return $stmt->execute();
     }
 
     public function getId() {
         return $this->id;
     }
     public function setId($id) {
-        $this->id = $id;
+        $this->id = (int)$id;
     }
 
     public function getNome() {
@@ -44,11 +49,11 @@ class Exercicio extends CRUD {
     }
 
     public function getGrupoMuscular() {
-        return $this->grupoMuscular;
+        return $this->grupo_muscular;
     
 }
 public function setGrupoMuscular($grupoMuscular) {
-    $this->grupoMuscular = $grupoMuscular;
+    $this->grupo_muscular = $grupoMuscular;
 
 }
 }

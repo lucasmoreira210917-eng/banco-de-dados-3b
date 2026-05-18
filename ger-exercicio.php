@@ -39,19 +39,20 @@ $exercicio = $edtexec->search('idexercicio',$id);
   </div>
   <div class="card">
     <form action="db-execicio.php" method="post" class="row p-4 g3 mt-3">
+      <input type="hidden" name="id" value="<?= $exercicio->idexercicio; ?>">
       <div class="col-12">
         <label for="nome" class="form-label">Nome</label>
-        <input type="text" name="nome" id="nome" class="form-control" value="<?= $exercicio->nome?>">
+        <input type="text" name="nome" id="nome" class="form-control" value="<?= $exercicio->nome?? null; ?>">
 
       </div>
       <div class="col-12">
         <label for="descricao" class="form-label">Descrição</label>
-        <textarea name="descricao" id="descricao" class="form-control"><?= $exercicio->descricao ?></textarea>
+        <textarea name="descricao" id="descricao" class="form-control"><?= $exercicio->descricao?? null; ?></textarea>
       </div>
       <div class="col-md-6">
       <label for="grupo-muscular" class="form-label">Grupo Muscular</label>
       <?php
-      $grupo_sel = $exercicio->grupo_muscular;
+      $grupo_sel = $exercicio->grupo_muscular ?? null;
       ?>
       <select name="grupoMuscular" id="grupoMuscular" class="form-select" >
         <option value="">Selecione...</option>
